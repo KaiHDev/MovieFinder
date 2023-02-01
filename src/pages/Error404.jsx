@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import wall_E_404 from "../assets/wall_E_404.png";
+import wall_E from "../assets/wall_E.png";
 
 const Error404 = () => {
   let navigate = useNavigate();
@@ -16,7 +16,7 @@ const Error404 = () => {
         </button>
       </div>
       <div className="sectionRight">
-        <img className="wallE404" alt="Wall-E" src={wall_E_404}></img>
+        <img className="wallE404" alt="Wall-E" src={wall_E}></img>
       </div>
     </div>
   );
