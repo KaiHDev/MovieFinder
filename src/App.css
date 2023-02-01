@@ -411,20 +411,23 @@ span {
   .detailsContainer {
     display: inline-block;
     align-items: center; /* align item vertically */
+    width: 80%;
+    padding-left: 5%;
+    padding-right: 5%;
   }
 
   .sectionLeft {
-    width: 100%;
     text-align: left;
     margin-bottom: 20px;
     margin-right: 0;
+    text-align: center;
   }
 
   .sectionRight {
-    width: 100%;
     text-align: left;
     margin-top: 20px;
     margin-left: 0;
+    text-align: center;
   }
 
   .searchButton {
