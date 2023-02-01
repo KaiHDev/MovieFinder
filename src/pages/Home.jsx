@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Card } from "../components/Card";
-import useFullPageLoader from "../hooks/useFullPageLoader";
+import useFullPageLoader from "../hook/useFullPageLoader";
 
 const API_URL = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_MOVIE_FINDER_API_KEY}`;
 

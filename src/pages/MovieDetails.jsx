@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import useFullPageLoader from "../hooks/useFullPageLoader";
+import useFullPageLoader from "../hook/useFullPageLoader";
 import IMDb_logo from "../assets/IMDb_Logo.png";
 
 const MovieDetails = () => {
