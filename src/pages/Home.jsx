@@ -12,6 +12,7 @@ const Home = () => {
 
   useEffect(() => {
     searchMovies("Avengers");
+    return () => clearInterval(searchMovies);
   }, []);
 
   const handleKeyDown = (e) => {

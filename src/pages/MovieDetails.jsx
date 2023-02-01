@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import useFullPageLoader from "../hooks/useFullPageLoader";
 import IMDb_logo from "../assets/IMDb_Logo.png";
@@ -13,17 +13,27 @@ const MovieDetails = () => {
   //Rating defined here as it is in an array which can be "undefined"
   const ratingValueIMDb = movieDetails.Ratings ?? "undefined";
 
+  //UseRef is used to make a temporary function
+  const tempRetrieval = useRef();
+
+  //Main data retrieval
+  const dataRetrieval = async () => {
+    showLoader();
+    const response = await fetch(`${API_URL}&t=${title}`);
+    const data = await response.json().then(
+      setTimeout(() => {
+        hideLoader();
+      }, [300])
+    );
+    setMovieDetails(data);
+  };
+
+  //Set the temporary function in its current state to the main function
+  tempRetrieval.current = dataRetrieval;
+
+  //Use the temporary function to call the data and remove the dependency
   useEffect(() => {
-    (async () => {
-      showLoader();
-      const response = await fetch(`${API_URL}&t=${title}`);
-      const data = await response.json().then(
-        setTimeout(() => {
-          hideLoader();
-        }, [300])
-      );
-      setMovieDetails(data);
-    })();
+    tempRetrieval.current();
   }, []);
 
   return (
