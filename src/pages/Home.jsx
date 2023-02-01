@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Card } from "../components/Card";
 import useFullPageLoader from "../hooks/useFullPageLoader";
 
@@ -10,10 +10,7 @@ const Home = () => {
   const [movies, setMovies] = useState([]);
   const [loader, showLoader, hideLoader] = useFullPageLoader();
 
-  useEffect(() => {
-    searchMovies("Avengers");
-    return () => clearInterval(searchMovies);
-  }, []);
+  const tempRetrieval = useRef();
 
   const handleKeyDown = (e) => {
     if (searchTerm === "") {
@@ -34,6 +31,12 @@ const Home = () => {
     );
     setMovies(data.Search);
   };
+
+  tempRetrieval.current = searchMovies;
+
+  useEffect(() => {
+    tempRetrieval.current("Avengers");
+  }, []);
 
   return (
     <>
