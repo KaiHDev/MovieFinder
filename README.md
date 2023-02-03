@@ -1,6 +1,6 @@
 # Movie Finder App
 
-This app is a simple React App that uses various hooks/features within React, bootstrap css and IMDb API 
+This app is a simple React App that uses various hooks/features within React, bootstrap CSS and IMDb API 
 
 It was created to showcase the skills I have learnt so far.
 
