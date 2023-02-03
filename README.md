@@ -9,8 +9,8 @@ It was created to showcase the skills I have learnt so far.
 Utilise more of the API by doing the following:
 
 - Show movies by Genre, actors/actress's, year released and age rating. Which would be in the form of a drop down/header with seperate pages for each type of results.
-- Show movie trailers (would have to potentially get permission for copyright issues).
-- Import ratings for other sources.
+- Show movie trailers (would have to potentially get permission due to copyright issues).
+- Import ratings from other sources.
 - Add a related section to the footer/bottom of each search result with relevant movies.
 - Add a link to services that stream this movie (Amazon, Netflix).
 
